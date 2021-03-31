@@ -136,9 +136,13 @@
             >@yoyo_blahmcblah</a
         >
         was inspired by
-        <a href="https://youtube.com" target="_blank">Benjamin Cowen</a>
+        <a href="https://youtu.be/JAKJUIRg--g?t=779" target="_blank"
+            >Benjamin Cowen</a
+        >
         &
-        <a href="https://youtube.com" target="_blank">Token Metrics</a>
+        <a href="https://youtu.be/BQtdZOFMMmM?t=454" target="_blank"
+            >Token Metrics</a
+        >
     </div>
 </footer>
 

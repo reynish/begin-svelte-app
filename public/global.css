@@ -1,63 +1,113 @@
-html, body {
-	position: relative;
-	width: 100%;
-	height: 100%;
+#svelte-announcer.svelte-1j55zn5 {
+    position: absolute;
+    left: 0;
+    top: 0;
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    overflow: hidden;
+    white-space: nowrap;
+    width: 1px;
+    height: 1px;
 }
-
-body {
-	color: #333;
-	margin: 0;
-	padding: 8px;
-	box-sizing: border-box;
-	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+:root {
+    background-color: #565656;
+    font-size: 12px;
 }
-
-a {
-	color: rgb(0,100,200);
-	text-decoration: none;
+@media (min-width: 768px) {
+    :root {
+        font-size: 16px;
+    }
 }
-
-a:hover {
-	text-decoration: underline;
+body,
+html {
+    margin: 0;
+    padding: 0;
+    color: #eee;
 }
-
+a:link,
 a:visited {
-	color: rgb(0,80,160);
+    color: #d4ff0d;
 }
-
-label {
-	display: block;
+a:active,
+a:hover {
+    color: #fff;
 }
-
-input, button, select, textarea {
-	font-family: inherit;
-	font-size: inherit;
-	-webkit-padding: 0.4em 0;
-	padding: 0.4em;
-	margin: 0 0 0.5em 0;
-	box-sizing: border-box;
-	border: 1px solid #ccc;
-	border-radius: 2px;
+#svelte,
+body {
+    height: 100vh;
 }
-
-input:disabled {
-	color: #ccc;
+#svelte {
+    display: grid;
+    display: grid;
+    grid-template-rows: auto 3fr auto;
+    grid-gap: 1rem;
 }
-
-button {
-	color: #333;
-	background-color: #f4f4f4;
-	outline: none;
+footer,
+header,
+main {
+    padding: 0 1rem;
 }
-
-button:disabled {
-	color: #999;
+main {
+    display: flex;
+    flex-direction: column;
 }
-
-button:not(:disabled):active {
-	background-color: #ddd;
+.header {
+    display: flex;
 }
-
-button:focus {
-	border-color: #666;
+.header-section {
+    margin: 1rem 0;
+}
+input {
+    font-family: monospace;
+}
+.input_transparent {
+    font-size: 16px;
+    background: 0 0;
+    color: #d4ff0d;
+    border: 2px solid #d4ff0d;
+    padding: 0.5rem;
+}
+table {
+    width: 100%;
+    height: 100%;
+    font-size: 1rem;
+    border-collapse: collapse;
+}
+@media (min-width: 768px) {
+    table {
+        font-size: 1.5rem;
+    }
+}
+@media (min-width: 1024px) {
+    table {
+        font-size: 2rem;
+    }
+}
+table,
+td,
+th {
+    border: 2px solid #d4ff0d;
+}
+td,
+th {
+    padding: 0.25rem;
+    text-align: center;
+}
+tbody td {
+    max-width: 25%;
+}
+.text-small {
+    display: block;
+    font-size: 1rem;
+}
+td .text-small {
+    color: #bbb;
+    line-height: 1.3;
+}
+footer {
+    text-align: center;
+    line-height: 1.6;
+}
+.display-none {
+    display: none;
 }

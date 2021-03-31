@@ -102,10 +102,10 @@
                 placeholder="coin"
             />
             {#await coinlist then coinlist}
-                {#if coinFilter.length > 3 && coin}
-                    {#each coinlist.filter((c) =>
-                        c.startsWith(coinFilter)
-                    ) as c}
+                {#if coinFilter.length > 3 && coinFilter !== coin.id}
+                    {#each coinlist
+                        .filter((c) => c.startsWith(coinFilter))
+                        .slice(0, 3) as c}
                         <a
                             href="#top"
                             style="padding-right: 1rem;"

@@ -24,6 +24,10 @@
 
     let coin = getCoin();
 
+    let coinlist = fetch(`https://api.coingecko.com/api/v3/coins/list`)
+        .then((response) => response.json())
+        .then((data) => data.map((coin) => coin.id));
+
     async function getCoin() {
         coin = await fetch(
             `https://api.coingecko.com/api/v3/coins/${$coinName}?tickers=false&community_data=false&developer_data=false&sparkline=false`
@@ -68,12 +72,14 @@
             });
     }
 
+    let coinFilter = "";
     let timer;
     // debouncing is always a good idea :]
     const handleKeyup = (event) => {
         // coin = new Promise();
         clearTimeout(timer);
         timer = setTimeout(() => {
+            coinFilter = event.target.value;
             coinName.set(event.target.value);
             coin = getCoin();
         }, 250);
@@ -95,6 +101,22 @@
                 on:keyup={handleKeyup}
                 placeholder="coin"
             />
+            {#await coinlist then coinlist}
+                {#if coinFilter.length > 3 && coin}
+                    {#each coinlist.filter((c) =>
+                        c.startsWith(coinFilter)
+                    ) as c}
+                        <a
+                            href="#top"
+                            style="padding-right: 1rem;"
+                            on:click={() => {
+                                coinName.set(c);
+                                coin = getCoin();
+                            }}>{c}</a
+                        >
+                    {/each}
+                {/if}
+            {/await}
         </div>
         {#await coin}
             <div class="header-section">
